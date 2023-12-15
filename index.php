@@ -2,8 +2,8 @@
 require "conexion.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $correo = $_POST["correo"];
-    $contraseña = $_POST["contraseña"];
+    $correo = $_GET["correo"];
+    $contraseña = $_GET["contraseña"];
 
     $consultaUsuario = "SELECT id_usuario, contraseña, tipo_usuario FROM usuario WHERE correo = '$correo'";
     $resultadoConsulta = mysqli_query($conectar, $consultaUsuario);
